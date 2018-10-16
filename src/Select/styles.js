@@ -2,9 +2,9 @@ import styled from "styled-components";
 import Select, { components } from "react-select";
 
 const colour = {
-  OR: { backgroundColor: "#bcbec0", borderColor: "#bcbec0" },
-  AND: { backgroundColor: "#9bba46", borderColor: "#9bba46" },
-  NOT: { backgroundColor: "#ba1c21", borderColor: "#ba1c21" }
+  or: { backgroundColor: "#bcbec0", borderColor: "#bcbec0" },
+  and: { backgroundColor: "#9bba46", borderColor: "#9bba46" },
+  not: { backgroundColor: "#ba1c21", borderColor: "#ba1c21" }
 };
 
 export const Control = styled.div`
@@ -43,4 +43,12 @@ export const Option = styled.div`
 
 export const ValueWrapper = styled.div`
   display: flex;
+`;
+
+export const Circle = styled.div`
+  ${({ boolean }) => colour[boolean]};
+  min-width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 5px;
 `;

@@ -1,12 +1,12 @@
 import React from "react";
 import Select, { components } from "react-select";
 
-import { Control as ControlStyled } from "./styles";
+import { Control as ControlStyled, Circle } from "./styles";
 
 const operators = [
-  { value: "OR", label: "⚪ OR" },
-  { value: "AND", label: "🔵 AND" },
-  { value: "NOT", label: "🔴 NOT" }
+  { value: "or", label: "OR" },
+  { value: "and", label: "AND" },
+  { value: "not", label: "NOT" }
 ];
 
 const styles = {
@@ -28,6 +28,11 @@ const styles = {
   dropdownIndicator: base => ({
     ...base,
     color: "white"
+  }),
+  option: base => ({
+    ...base,
+    display: "flex",
+    paddingLeft: "7px"
   })
 };
 
@@ -37,8 +42,15 @@ const Control = props => (
   </ControlStyled>
 );
 
-const SingleValue = ({ data: { value }, ...props }) => (
-  <components.SingleValue {...props}>{value}</components.SingleValue>
+const SingleValue = ({ data: { label }, ...props }) => (
+  <components.SingleValue {...props}>{label}</components.SingleValue>
+);
+
+const Option = props => (
+  <components.Option {...props}>
+    <Circle boolean={props.value} />
+    {props.label}
+  </components.Option>
 );
 
 const IndicatorSeparator = false;
@@ -46,7 +58,7 @@ const IndicatorSeparator = false;
 export default props => (
   <Select
     defaultValue={operators[0]}
-    components={{ SingleValue, IndicatorSeparator, Control }}
+    components={{ SingleValue, IndicatorSeparator, Control, Option }}
     isClearable={false}
     isSearchable={false}
     options={operators}

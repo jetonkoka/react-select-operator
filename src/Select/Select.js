@@ -34,7 +34,6 @@ const styles = {
 
 export default class extends Component {
   onChangeBoolean = bl => ({ data, selectProps }) =>
-    console.log("selectProps", selectProps.setValue) ||
     this.setValue(
       selectProps.value.map(
         opt =>

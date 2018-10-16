@@ -1,25 +1,14 @@
 import styled from "styled-components";
-import Select, { components } from "react-select";
 
-const colour = {
+export const colour = {
   or: { backgroundColor: "#bcbec0", borderColor: "#bcbec0" },
   and: { backgroundColor: "#9bba46", borderColor: "#9bba46" },
   not: { backgroundColor: "#ba1c21", borderColor: "#ba1c21" }
 };
 
-export const Control = styled.div`
-  ${({ boolean }) => colour[boolean]};
-  border-radius: 10px;
-  border-style: solid;
-  border-width: 1px;
-  color: white;
-  display: flex;
-  justify-content: center;
-`;
-
 export const Group = styled.div`
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
 `;
 
@@ -37,8 +26,8 @@ export const GroupBadge = styled.span`
 `;
 
 export const Option = styled.div`
-  display: flex;
   align-items: center;
+  display: flex;
 `;
 
 export const ValueWrapper = styled.div`
@@ -47,8 +36,8 @@ export const ValueWrapper = styled.div`
 
 export const Circle = styled.div`
   ${({ boolean }) => colour[boolean]};
-  min-width: 15px;
-  height: 15px;
   border-radius: 50%;
+  height: 10px;
   margin-right: 5px;
+  min-width: 10px;
 `;

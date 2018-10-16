@@ -1,4 +1,21 @@
 import styled from "styled-components";
+import Select, { components } from "react-select";
+
+const colour = {
+  OR: { backgroundColor: "#bcbec0", borderColor: "#bcbec0" },
+  AND: { backgroundColor: "#9bba46", borderColor: "#9bba46" },
+  NOT: { backgroundColor: "#ba1c21", borderColor: "#ba1c21" }
+};
+
+export const Control = styled.div`
+  ${({ boolean }) => colour[boolean]};
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  color: white;
+  display: flex;
+  justify-content: center;
+`;
 
 export const Group = styled.div`
   display: flex;

@@ -1,34 +1,59 @@
 import React from "react";
 import Select, { components } from "react-select";
 
+import { Circle, colour } from "./styles";
+
 const operators = [
-  { value: "OR", label: "⚪ OR" },
-  { value: "AND", label: "🔵 AND" },
-  { value: "NOT", label: "🔴 NOT" }
+  { value: "or", label: "OR" },
+  { value: "and", label: "AND" },
+  { value: "not", label: "NOT" }
 ];
 
 const styles = {
-  control: () => ({
-    border: "1px solid grey",
-    borderRadius: "50px",
+  control: (base, state) => ({
+    ...colour[state.getValue()[0].value],
+    borderRadius: "10px",
+    borderStyle: "solid",
+    borderWidth: "1px",
+    color: "white",
+    display: "flex",
     display: "flex",
     fontSize: "10px",
     height: "23px",
+    justifyContent: "center",
     overflow: "visible",
-    width: 100
+    width: 70
   }),
+
   singleValue: base => ({
     ...base,
-    alignItems: "center",
+    color: "white"
+  }),
+
+  option: (base, state) => ({
+    ...base,
+    backgroundColor: state.isFocused ? "#cccccc" : "transparent",
+    color: "black",
     display: "flex",
-    height: "100%",
-    justifyContent: "center",
-    width: "100%"
+    fontSize: "10px",
+    paddingLeft: "7px"
+  }),
+
+  dropdownIndicator: base => ({
+    ...base,
+    color: "white"
   })
 };
 
-const SingleValue = ({ data: { value }, ...props }) => (
-  <components.SingleValue {...props}>{value}</components.SingleValue>
+const SingleValue = ({ data: { label }, ...props }) => (
+  <components.SingleValue {...props}>{label}</components.SingleValue>
+);
+
+const Option = props => (
+  <components.Option {...props}>
+    <Circle boolean={props.value} />
+    {props.label}
+  </components.Option>
 );
 
 const IndicatorSeparator = false;
@@ -36,7 +61,7 @@ const IndicatorSeparator = false;
 export default props => (
   <Select
     defaultValue={operators[0]}
-    components={{ SingleValue, IndicatorSeparator }}
+    components={{ SingleValue, IndicatorSeparator, Option }}
     isClearable={false}
     isSearchable={false}
     options={operators}

@@ -13,6 +13,8 @@ const formatGroupLabel = ({ description, options, ...props }) => (
   </Group>
 );
 
+const IndicatorSeparator = false;
+
 const styles = {
   valueContainer: base => ({
     ...base,
@@ -93,6 +95,7 @@ export default class extends Component {
           cacheOptions
           closeMenuOnSelect={false}
           components={{
+            IndicatorSeparator,
             MultiValueContainer: this.ValueWrapper,
             Option: this.CustomOption
           }}

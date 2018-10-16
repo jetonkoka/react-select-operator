@@ -1,8 +1,14 @@
 import styled from "styled-components";
 
+export const colour = {
+  or: { backgroundColor: "#bcbec0", borderColor: "#bcbec0" },
+  and: { backgroundColor: "#9bba46", borderColor: "#9bba46" },
+  not: { backgroundColor: "#ba1c21", borderColor: "#ba1c21" }
+};
+
 export const Group = styled.div`
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
 `;
 
@@ -20,10 +26,18 @@ export const GroupBadge = styled.span`
 `;
 
 export const Option = styled.div`
-  display: flex;
   align-items: center;
+  display: flex;
 `;
 
 export const ValueWrapper = styled.div`
   display: flex;
+`;
+
+export const Circle = styled.div`
+  ${({ boolean }) => colour[boolean]};
+  border-radius: 50%;
+  height: 10px;
+  margin-right: 5px;
+  min-width: 10px;
 `;

@@ -23,6 +23,12 @@ const styles = {
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis"
+  }),
+  multiValue: base => ({
+    ...base,
+    backgroundColor: "transparent",
+    border: "1px solid rgb(48, 86, 121)",
+    borderRadius: "5px"
   })
 };
 

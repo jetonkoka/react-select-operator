@@ -17,7 +17,6 @@ const styles = {
     borderWidth: "1px",
     color: "white",
     display: "flex",
-    display: "flex",
     fontSize: "10px",
     height: "23px",
     justifyContent: "center",

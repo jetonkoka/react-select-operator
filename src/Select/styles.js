@@ -25,11 +25,6 @@ export const GroupBadge = styled.span`
   text-align: center;
 `;
 
-export const Option = styled.div`
-  align-items: center;
-  display: flex;
-`;
-
 export const ValueWrapper = styled.div`
   display: flex;
 `;
@@ -40,4 +35,8 @@ export const Circle = styled.div`
   height: 10px;
   margin-right: 5px;
   min-width: 10px;
+`;
+
+export const Checkbox = styled.input`
+  margin-right: 10px;
 `;

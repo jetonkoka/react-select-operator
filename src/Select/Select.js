@@ -77,14 +77,16 @@ export default class extends Component {
     </VWrapper>
   );
 
-  CustomOption = ({ data: { info }, ...props }) => (
-    <components.Option {...props}>
+  CustomOption = ({
+    data: { info },
+    innerProps: { onMouseOver, onClick },
+    ...props
+  }) => (
+    <components.Option {...props} innerProps={{ onMouseOver }}>
       <Checkbox
         checked={props.isSelected}
         onChange={() =>
-          props.isSelected
-            ? props.innerProps.onClick()
-            : this.onClickOption(props)
+          props.isSelected ? onClick() : this.onClickOption(props)
         }
         type="checkbox"
       />

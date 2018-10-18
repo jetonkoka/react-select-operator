@@ -1,6 +1,6 @@
 {
   "name": "react-select-operator",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "react-select-operator React component",
   "main": "lib/index.js",
   "module": "es/index.js",

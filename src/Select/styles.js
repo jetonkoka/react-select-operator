@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const colour = {
-  or: { backgroundColor: "#bcbec0", borderColor: "#bcbec0" },
-  and: { backgroundColor: "#9bba46", borderColor: "#9bba46" },
-  not: { backgroundColor: "#ba1c21", borderColor: "#ba1c21" }
+  OR: { backgroundColor: "#bcbec0", borderColor: "#bcbec0" },
+  AND: { backgroundColor: "#9bba46", borderColor: "#9bba46" },
+  NOT: { backgroundColor: "#ba1c21", borderColor: "#ba1c21" }
 };
 
 export const Group = styled.div`
@@ -25,13 +25,20 @@ export const GroupBadge = styled.span`
   text-align: center;
 `;
 
-export const Option = styled.div`
-  align-items: center;
+export const ValueWrapper = styled.div`
   display: flex;
 `;
 
-export const ValueWrapper = styled.div`
-  display: flex;
+export const Circle = styled.div`
+  ${({ boolean }) => colour[boolean]};
+  border-radius: 50%;
+  height: 10px;
+  margin-right: 5px;
+  min-width: 10px;
+`;
+
+export const Checkbox = styled.input`
+  margin-right: 10px;
 `;
 
 export const Circle = styled.div`

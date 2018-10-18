@@ -2,11 +2,16 @@ import React, { Component } from "react";
 import AsyncSelect, { components } from "react-select";
 
 import Booleans from "./Booleans";
-import { Group, GroupBadge, Option, ValueWrapper as VWrapper } from "./styles";
+import {
+  Group,
+  GroupBadge,
+  Checkbox,
+  ValueWrapper as VWrapper
+} from "./styles";
 
 const { MultiValueContainer } = components;
 
-const formatGroupLabel = ({ description, options, ...props }) => (
+const formatGroupLabel = ({ description, options }) => (
   <Group>
     <span>{description}</span>
     <GroupBadge>{options.length}</GroupBadge>
@@ -20,11 +25,14 @@ const styles = {
     ...base,
     overflow: "visible"
   }),
-  option: base => ({
+  control: base => ({ ...base, borderColor: "black" }),
+  option: (base, state) => ({
     ...base,
-    whiteSpace: "nowrap",
+    backgroundColor: state.isFocused ? "#cccccc" : "transparent",
+    color: "black",
     overflow: "hidden",
-    textOverflow: "ellipsis"
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap"
   }),
   multiValue: base => ({
     ...base,
@@ -69,23 +77,19 @@ export default class extends Component {
     </VWrapper>
   );
 
-  CustomOption = ({
-    innerProps: { onClick, onMouseOver },
-    data: { info },
-    ...props
-  }) => (
-    <Option onMouseOver={onMouseOver}>
-      <input
+  CustomOption = ({ data: { info }, ...props }) => (
+    <components.Option {...props}>
+      <Checkbox
         checked={props.isSelected}
         onChange={() =>
-          props.isSelected ? onClick() : this.onClickOption(props)
+          props.isSelected
+            ? props.innerProps.onClick()
+            : this.onClickOption(props)
         }
         type="checkbox"
       />
-      <components.Option {...props}>
-        {props.value} - {info.join("; ")}
-      </components.Option>
-    </Option>
+      {props.value} - {info.join("; ")}
+    </components.Option>
   );
 
   render() {

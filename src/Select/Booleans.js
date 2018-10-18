@@ -4,9 +4,9 @@ import Select, { components } from "react-select";
 import { Circle, colour } from "./styles";
 
 const operators = [
-  { value: "or", label: "OR" },
-  { value: "and", label: "AND" },
-  { value: "not", label: "NOT" }
+  { value: "OR", label: "OR" },
+  { value: "AND", label: "AND" },
+  { value: "NOT", label: "NOT" }
 ];
 
 const styles = {
@@ -16,7 +16,6 @@ const styles = {
     borderStyle: "solid",
     borderWidth: "1px",
     color: "white",
-    display: "flex",
     display: "flex",
     fontSize: "10px",
     height: "23px",

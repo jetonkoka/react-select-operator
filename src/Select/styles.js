@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const colour = {
-  or: { backgroundColor: "#bcbec0", borderColor: "#bcbec0" },
-  and: { backgroundColor: "#9bba46", borderColor: "#9bba46" },
-  not: { backgroundColor: "#ba1c21", borderColor: "#ba1c21" }
+  OR: { backgroundColor: "#bcbec0", borderColor: "#bcbec0" },
+  AND: { backgroundColor: "#9bba46", borderColor: "#9bba46" },
+  NOT: { backgroundColor: "#ba1c21", borderColor: "#ba1c21" }
 };
 
 export const Group = styled.div`

@@ -11,7 +11,7 @@ import {
 
 const { MultiValueContainer } = components;
 
-const formatGroupLabel = ({ description, options, ...props }) => (
+const formatGroupLabel = ({ description, options }) => (
   <Group>
     <span>{description}</span>
     <GroupBadge>{options.length}</GroupBadge>
@@ -25,6 +25,7 @@ const styles = {
     ...base,
     overflow: "visible"
   }),
+  control: base => ({ ...base, borderColor: "black" }),
   option: (base, state) => ({
     ...base,
     backgroundColor: state.isFocused ? "#cccccc" : "transparent",

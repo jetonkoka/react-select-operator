@@ -29,14 +29,6 @@ export const ValueWrapper = styled.div`
   display: flex;
 `;
 
-export const Circle = styled.div`
-  ${({ boolean }) => colour[boolean]};
-  border-radius: 50%;
-  height: 10px;
-  margin-right: 5px;
-  min-width: 10px;
-`;
-
 export const Checkbox = styled.input`
   margin-right: 10px;
 `;

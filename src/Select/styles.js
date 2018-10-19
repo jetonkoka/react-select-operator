@@ -30,7 +30,7 @@ export const ValueWrapper = styled.div`
 `;
 
 export const Checkbox = styled.input`
-  margin-right: 10px;
+  margin-right: 20px;
 `;
 
 export const Circle = styled.div`

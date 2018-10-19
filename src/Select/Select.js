@@ -29,8 +29,10 @@ const styles = {
   option: (base, state) => ({
     ...base,
     backgroundColor: state.isFocused ? "#cccccc" : "transparent",
+    borderBottom: "solid 1px #f0f0f1",
     color: "black",
     overflow: "hidden",
+    padding: "14px",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap"
   }),
@@ -90,7 +92,7 @@ export default class extends Component {
         }
         type="checkbox"
       />
-      {props.value} - {info.join("; ")}
+      <strong>{props.value}</strong> - {info.join("; ")}
     </components.Option>
   );
 

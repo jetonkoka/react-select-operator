@@ -69,7 +69,9 @@ export default class extends Component {
   };
 
   ValueWrapper = props => {
-    props.selectProps.value[0].operator &&
+    props.selectProps.value &&
+      props.selectProps.value[0] &&
+      props.selectProps.value[0].operator &&
       (props.selectProps.value[0].operator = null);
 
     return (

@@ -92,7 +92,7 @@ export default class extends Component {
         }
         type="checkbox"
       />
-      <strong>{props.value}</strong> - {info.join("; ")}
+      <strong>{props.value}</strong> - {info}
     </components.Option>
   );
 

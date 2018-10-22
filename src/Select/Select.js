@@ -9,8 +9,6 @@ import {
   ValueWrapper as VWrapper
 } from "./styles";
 
-const { MultiValueContainer } = components;
-
 const formatGroupLabel = ({ description, options }) => (
   <Group>
     <span>{description}</span>
@@ -70,14 +68,19 @@ export default class extends Component {
     ]);
   };
 
-  ValueWrapper = props => (
-    <VWrapper>
-      {props.data.operator && (
-        <Booleans onChange={e => this.onChangeBoolean(e)(props)} {...props} />
-      )}
-      <MultiValueContainer {...props} />
-    </VWrapper>
-  );
+  ValueWrapper = props => {
+    props.selectProps.value[0].operator &&
+      (props.selectProps.value[0].operator = null);
+
+    return (
+      <VWrapper>
+        {props.data.operator && (
+          <Booleans onChange={e => this.onChangeBoolean(e)(props)} {...props} />
+        )}
+        <components.MultiValueContainer {...props} />
+      </VWrapper>
+    );
+  };
 
   CustomOption = ({
     data: { info },

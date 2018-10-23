@@ -117,6 +117,7 @@ export default class extends Component {
           getOptionValue={option => option.num}
           hideSelectedOptions={false}
           isMulti
+          onKeyDown={e => e.keyCode === 13 && e.preventDefault()}
           styles={styles}
           {...this.props}
         />
